@@ -10,7 +10,6 @@ import UIKit
 class GameViewController: UIViewController {
     
     @IBOutlet var buttons: [UIButton]!
-    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var nextDigit: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var newGameButton: UIButton!
@@ -24,6 +23,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScreen()
+        newGameButton.layer.cornerRadius = 15
     }
 
     @IBAction func pressedButton(_ sender: UIButton) {
@@ -51,7 +51,7 @@ class GameViewController: UIViewController {
     
     private func updateUI() {
         for index in game.items.indices{
-            buttons[index].alpha = game.items[index].isFound ? 0 : 1
+            buttons[index].alpha = game.items[index].isFound ? 0.2 : 1
             buttons[index].isEnabled = !game.items[index].isFound
             
             if game.items[index].isError {
@@ -72,18 +72,16 @@ class GameViewController: UIViewController {
     private func updateInfoGame(with status: StatusGame) {
         switch status {
         case .start:
-            statusLabel.text = "Игра началась..."
-            statusLabel.textColor = .systemBlue
             newGameButton.isHidden = true
             timerLabel.isHidden = false
         case .win:
-            statusLabel.text = "Вы выиграли! :)"
-            statusLabel.textColor = .systemGreen
+            nextDigit.text = "Вы выиграли!"
+            nextDigit.textColor = .systemGreen
             newGameButton.isHidden = false
             timerLabel.isHidden = true
         case .lose:
-            statusLabel.text = "Вы проиграли :("
-            statusLabel.textColor = .systemRed
+            nextDigit.text = "Вы проиграли..."
+            nextDigit.textColor = .systemRed
             newGameButton.isHidden = false
             timerLabel.isHidden = true
         }
