@@ -10,6 +10,7 @@
 		24089EE62706FD8B00E7C2D7 /* SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24089EE52706FD8900E7C2D7 /* SelectTimeViewController.swift */; };
 		24089EE82706FDB600E7C2D7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24089EE72706FDB600E7C2D7 /* SettingsTableViewController.swift */; };
 		24089EEA2707083100E7C2D7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24089EE92707083100E7C2D7 /* Settings.swift */; };
+		24089EEC27073E7700E7C2D7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24089EEB27073E7600E7C2D7 /* RecordViewController.swift */; };
 		247AE33A2702116D00A197BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247AE3392702116D00A197BD /* AppDelegate.swift */; };
 		247AE33C2702116D00A197BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247AE33B2702116D00A197BD /* SceneDelegate.swift */; };
 		247AE33E2702116D00A197BD /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247AE33D2702116D00A197BD /* GameViewController.swift */; };
@@ -23,6 +24,7 @@
 		24089EE52706FD8900E7C2D7 /* SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewController.swift; sourceTree = "<group>"; };
 		24089EE72706FDB600E7C2D7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		24089EE92707083100E7C2D7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = FIndNumber/Model/Settings.swift; sourceTree = SOURCE_ROOT; };
+		24089EEB27073E7600E7C2D7 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		247AE3362702116D00A197BD /* FIndNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIndNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		247AE3392702116D00A197BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		247AE33B2702116D00A197BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				247AE33D2702116D00A197BD /* GameViewController.swift */,
 				24089EE72706FDB600E7C2D7 /* SettingsTableViewController.swift */,
 				24089EE52706FD8900E7C2D7 /* SelectTimeViewController.swift */,
+				24089EEB27073E7600E7C2D7 /* RecordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				247AE33E2702116D00A197BD /* GameViewController.swift in Sources */,
 				24089EE62706FD8B00E7C2D7 /* SelectTimeViewController.swift in Sources */,
 				24089EE82706FDB600E7C2D7 /* SettingsTableViewController.swift in Sources */,
+				24089EEC27073E7700E7C2D7 /* RecordViewController.swift in Sources */,
 				247AE33A2702116D00A197BD /* AppDelegate.swift in Sources */,
 				24089EEA2707083100E7C2D7 /* Settings.swift in Sources */,
 				247AE33C2702116D00A197BD /* SceneDelegate.swift in Sources */,

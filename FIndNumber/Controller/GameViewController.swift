@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
         setupScreen()
         newGameButton.layer.cornerRadius = 15
     }
-
+    
     @IBAction func pressedButton(_ sender: UIButton) {
         guard let buttonIndex = buttons.firstIndex(of: sender) else { return }
         game.check(index: buttonIndex)
@@ -84,12 +84,51 @@ class GameViewController: UIViewController {
             nextDigit.textColor = .systemGreen
             newGameButton.isHidden = false
             timerLabel.isHidden = true
+            if game.isNewRecord {
+                showAlert()
+            } else {
+                showAlertActionSheet()
+            }
         case .lose:
             nextDigit.text = "Вы проиграли..."
             nextDigit.textColor = .systemRed
             newGameButton.isHidden = false
             timerLabel.isHidden = true
+            showAlertActionSheet()
         }
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(title: "Поздравляем!", message: "Вы установили новый рекорд :)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ок", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlertActionSheet() {
+        let alert = UIAlertController(title: "Что дальше?", message: nil, preferredStyle: .actionSheet)
+        
+        let newGameAction = UIAlertAction(title: "Начать заново", style: .default) { [weak self] (_) in
+            self?.game.newGame()
+            self?.setupScreen()
+        }
+        
+        let showRecord = UIAlertAction(title: "Рекорд", style: .default) { [weak self] (_) in
+            self?.performSegue(withIdentifier: "recordVC", sender: nil)
+        }
+         
+        let menuAction = UIAlertAction(title: "В меню", style: .destructive) { [weak self] (_) in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alert.addAction(newGameAction)
+        alert.addAction(showRecord)
+        alert.addAction(menuAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 

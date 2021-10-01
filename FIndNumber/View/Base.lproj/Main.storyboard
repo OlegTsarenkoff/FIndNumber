@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Меню-->
+        <!--View Controller-->
         <scene sceneID="jse-qj-m6w">
             <objects>
                 <viewController id="oz7-eL-t5G" sceneMemberID="viewController">
@@ -61,7 +61,9 @@
                             <constraint firstItem="8Ly-nF-Lph" firstAttribute="centerY" secondItem="Sgu-cX-8DX" secondAttribute="centerY" id="ytm-05-4tz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Меню" id="hQU-QB-cTH"/>
+                    <navigationItem key="navigationItem" id="hQU-QB-cTH">
+                        <barButtonItem key="backBarButtonItem" title="В меню" id="eiz-vV-kKw"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVw-uR-Um2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,14 +72,30 @@
         <!--Рекорды-->
         <scene sceneID="cv6-4s-0hr">
             <objects>
-                <viewController id="qcS-Mw-DQr" sceneMemberID="viewController">
+                <viewController id="qcS-Mw-DQr" customClass="RecordViewController" customModule="FIndNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="98s-xr-WWz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yup-wx-BJs">
+                                <rect key="frame" x="16" y="315.5" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="R59-qc-gw4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R59-qc-gw4" firstAttribute="trailing" secondItem="Yup-wx-BJs" secondAttribute="trailing" constant="16" id="5r4-cU-bvE"/>
+                            <constraint firstItem="Yup-wx-BJs" firstAttribute="leading" secondItem="R59-qc-gw4" secondAttribute="leading" constant="16" id="SSM-B9-FRO"/>
+                            <constraint firstItem="Yup-wx-BJs" firstAttribute="centerY" secondItem="98s-xr-WWz" secondAttribute="centerY" id="fee-Sp-1HO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Рекорды" id="ucR-6E-zfh"/>
+                    <connections>
+                        <outlet property="recordLabel" destination="Yup-wx-BJs" id="Q2E-XC-qsK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBc-IQ-hfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,9 +179,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8C-4p-CDE">
-                                                    <rect key="frame" x="88" y="6.5" width="199" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Настройки по умолчанию"/>
+                                                    <rect key="frame" x="94.5" y="7" width="186" height="30"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Настройки по умолчанию"/>
                                                     <connections>
                                                         <action selector="resetSettings:" destination="5rL-lL-SpW" eventType="touchUpInside" id="6Om-tC-cKA"/>
                                                     </connections>
@@ -193,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="1953" y="161"/>
         </scene>
-        <!--Select Time View Controller-->
+        <!--Время игры-->
         <scene sceneID="faV-4D-vqo">
             <objects>
                 <viewController id="w7J-Gl-4hD" customClass="SelectTimeViewController" customModule="FIndNumber" customModuleProvider="target" sceneMemberID="viewController">
@@ -202,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RHi-WX-J5J">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" textLabel="ukZ-i3-98b" style="IBUITableViewCellStyleDefault" id="R7o-CX-lUy">
@@ -234,7 +252,7 @@
                             <constraint firstItem="RHi-WX-J5J" firstAttribute="top" secondItem="jA4-KG-Xm0" secondAttribute="top" id="SHA-ia-0Rx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Bwd-Hn-kN6"/>
+                    <navigationItem key="navigationItem" title="Время игры" id="Bwd-Hn-kN6"/>
                     <connections>
                         <outlet property="tableView" destination="RHi-WX-J5J" id="fMc-St-2VG"/>
                     </connections>
@@ -498,7 +516,7 @@
                             <constraint firstItem="tcT-ME-H2U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="u3M-2h-yzO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="84G-q6-8vw"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="84G-q6-8vw"/>
                     <connections>
                         <outlet property="newGameButton" destination="RWm-eF-tYm" id="YEK-Jm-3tI"/>
                         <outlet property="nextDigit" destination="zSt-g2-0e7" id="QgS-lT-Peb"/>
@@ -519,6 +537,7 @@
                         <outletCollection property="buttons" destination="mP3-OI-k3O" collectionClass="NSMutableArray" id="EGa-jf-TR3"/>
                         <outletCollection property="buttons" destination="3xd-Fm-jZo" collectionClass="NSMutableArray" id="T0e-V5-8hf"/>
                         <outletCollection property="buttons" destination="9SX-3s-H08" collectionClass="NSMutableArray" id="hxz-bM-NdA"/>
+                        <segue destination="qcS-Mw-DQr" kind="show" identifier="recordVC" id="D8t-E6-CkM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -530,8 +549,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z2Q-qJ-j9O" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R3W-ed-9LA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="R3W-ed-9LA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -544,6 +563,9 @@
             <point key="canvasLocation" x="116" y="161"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="D8t-E6-CkM"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
